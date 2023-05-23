@@ -84,7 +84,7 @@ export const SIDEBAR_MENU: Array<TSidebarItem> = [
     ],
   },
   {
-    groupName: "Documents",
+    groupName: "Warranty Documents",
     children: [
       {
         label: "Product Warranties",
@@ -110,6 +110,11 @@ export const SIDEBAR_MENU: Array<TSidebarItem> = [
         label: "Time-Keeping",
         url: "/dashboard",
         icon: <TbClockEdit />,
+      },
+      {
+        label: "User Trails",
+        url: "/dashboard",
+        icon: <TbUsers />,
       },
     ],
   },

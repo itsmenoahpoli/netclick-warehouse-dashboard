@@ -101,6 +101,7 @@ $SIDEBAR_WIDTH: 250px;
   width: 100%;
   display: flex;
   flex-direction: row;
+  overflow-y: hidden;
 
   &__sidebar {
     height: 100vh;
@@ -108,13 +109,15 @@ $SIDEBAR_WIDTH: 250px;
 
     .header {
       padding: 20px 0;
-      height: 60px;
+      height: 100px;
     }
 
     .body {
-      padding: 16px;
+      height: calc(100% - 100px);
+      overflow-y: scroll !important;
 
       .link-group {
+        padding: 0 16px;
         margin-bottom: 10px;
 
         label.link-group-label {
@@ -184,14 +187,15 @@ $SIDEBAR_WIDTH: 250px;
   }
 
   &__main-content {
+    background-color: #f2f2f7;
     width: 100%;
 
     .navbar {
       background-color: #fff;
-      height: 52px;
+      height: 60px;
       width: 100%;
       padding: 0 10px;
-      border-bottom: solid 1px #e3ebf6;
+      border-bottom: solid 1px #f2f2f2;
       display: flex;
       flex-direction: row;
 
@@ -209,6 +213,16 @@ $SIDEBAR_WIDTH: 250px;
           justify-content: flex-end;
         }
       }
+    }
+
+    .sub-navbar {
+      background-color: #fcfcfc;
+      height: 40px;
+      padding: 0 10px;
+      border-bottom: solid #eee;
+      display: flex;
+      align-items: center;
+      font-size: 12px;
     }
   }
 }

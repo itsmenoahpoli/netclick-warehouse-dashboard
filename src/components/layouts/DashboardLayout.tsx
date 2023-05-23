@@ -1,6 +1,8 @@
 import React from "react";
+import { Avatar } from "antd";
 import { Helmet } from "react-helmet";
 import Hamburger from "hamburger-react";
+import PerfectScrollbar from "react-perfect-scrollbar";
 import type {
   TLayoutProps,
   TAppContentProps,
@@ -18,21 +20,25 @@ const AppSidebar = (props: TAppSidebarProps) => {
         props.isSidebarCollapsed ? "closed" : "open"
       }`}
     >
-      <div className="header">{/* <BrandLogo height={100} width={100} /> */}</div>
+      <div className="header">
+        <BrandLogo height={100} width={100} />{" "}
+      </div>
       <div className="body">
-        {props.items.map((i: TSidebarItem) => (
-          <div className="link-group" key={`link-group-${i.groupName}`}>
-            <label className="link-group-label">{i.groupName}</label>
-            <div className="group-links">
-              {i.children.map((x: TSidebarItemChild) => (
-                <button className="group-link-btn" key={`group-link-btn-${x.url}`}>
-                  <span className="icon">{x.icon}</span>
-                  <span className="label">{x.label}</span>
-                </button>
-              ))}
+        <PerfectScrollbar>
+          {props.items.map((i: TSidebarItem) => (
+            <div className="link-group" key={`link-group-${i.groupName}`}>
+              <label className="link-group-label">{i.groupName}</label>
+              <div className="group-links">
+                {i.children.map((x: TSidebarItemChild) => (
+                  <button className="group-link-btn" key={`group-link-btn-${x.url}`}>
+                    <span className="icon">{x.icon}</span>
+                    <span className="label">{x.label}</span>
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </PerfectScrollbar>
       </div>
     </div>
   );
@@ -50,8 +56,11 @@ const AppContent = (props: TAppContentProps) => {
             size={16}
           />
         </div>
-        <div className="panel">b</div>
+        <div className="panel">
+          <Avatar style={{ backgroundColor: "#f56a00", fontSize: "12px" }}>PP</Avatar>
+        </div>
       </div>
+      <div className="sub-navbar">{"Dashboard > Overview"}</div>
     </div>
   );
 };
