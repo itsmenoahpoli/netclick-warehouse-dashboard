@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar } from "antd";
+import { Avatar, Button, Breadcrumb } from "antd";
 import { Helmet } from "react-helmet";
 import Hamburger from "hamburger-react";
 import PerfectScrollbar from "react-perfect-scrollbar";
@@ -57,10 +57,22 @@ const AppContent = (props: TAppContentProps) => {
           />
         </div>
         <div className="panel">
+          <Button type="link">Notifications</Button>
           <Avatar style={{ backgroundColor: "#f56a00", fontSize: "12px" }}>PP</Avatar>
         </div>
       </div>
-      <div className="sub-navbar">{"Dashboard > Overview"}</div>
+      <div className="sub-navbar">
+        <Breadcrumb
+          items={[
+            {
+              title: "Dashboard",
+            },
+            {
+              title: "Overview",
+            },
+          ]}
+        />
+      </div>
     </div>
   );
 };

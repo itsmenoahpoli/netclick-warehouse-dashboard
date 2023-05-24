@@ -3,6 +3,7 @@
  */
 export { AuthLayout } from "~/components/layouts/AuthLayout";
 export { DashboardLayout } from "~/components/layouts/DashboardLayout";
+export { DashboardLayout2 } from "~/components/layouts/DashboardLayout2";
 
 /**
  * Common
