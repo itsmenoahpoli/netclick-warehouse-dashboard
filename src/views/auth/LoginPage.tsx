@@ -1,12 +1,21 @@
 import React from "react";
-import { Space, Card } from "antd";
+import { useHistory } from "react-router-dom";
+import { Space } from "antd";
 
 import { AuthLayout, BrandLogo, LoginForm } from "~/components";
+import { AuthService } from "~/services";
 import type { TCredentials } from "~/types/auth";
 
 export const LoginPage: React.FC = () => {
+  const history = useHistory();
+  const AUTH_SERVICE = new AuthService();
+
   const onLoginHandler = async (credentials: TCredentials) => {
-    console.log(credentials);
+    const result = await AUTH_SERVICE.login(credentials);
+
+    if (result === "AUTHENTICATED") {
+      history.push("/dashboard/overview");
+    }
   };
 
   return (
@@ -14,7 +23,8 @@ export const LoginPage: React.FC = () => {
       <Space direction="vertical" size={20} style={{ width: "100%" }}>
         <BrandLogo />
         <div>
-          <h3 className="text-center">Warehouse Inventory Dashboard</h3>
+          <h3 className="text-center">Ryan's Technohub</h3>
+          <p>Warehouse dashboard</p>
           <LoginForm onLoginHandler={onLoginHandler} />
         </div>
         <div className="text-center copyright-label">

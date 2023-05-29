@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 import APP_ROUTES from "~/router";
 
@@ -14,6 +15,7 @@ export const App: React.FC = () => {
 
   return (
     <React.Fragment>
+      <ToastContainer />
       <BrowserRouter>
         <Switch>{renderRoutes()}</Switch>
       </BrowserRouter>

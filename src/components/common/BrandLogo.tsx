@@ -1,6 +1,6 @@
 import React from "react";
 
-import BRAND_LOGO from "~/assets/brand-logo.png";
+import BRAND_LOGO from "~/assets/brand/netclick-tech-ph.png";
 
 type TProps = {
   height?: number;
@@ -9,7 +9,7 @@ type TProps = {
 
 export const BrandLogo: React.FC<TProps> = (props) => {
   const height = props.height ?? 100;
-  const width = props.height ?? 100;
+  const width = props.height ?? 120;
 
   return (
     <div className="brand-logo-wrapper">
@@ -17,8 +17,10 @@ export const BrandLogo: React.FC<TProps> = (props) => {
         src={BRAND_LOGO}
         alt="brand-logo.png"
         className="brand-logo-wrapper__image"
-        height={height}
-        width={width}
+        style={{
+          height: `${height}px`,
+          width: `${width}px`,
+        }}
       />
     </div>
   );
