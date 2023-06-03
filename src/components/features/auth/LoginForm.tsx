@@ -8,8 +8,8 @@ type TProps = {
 
 export const LoginForm: React.FC<TProps> = (props) => {
   const [credentials, setCredentials] = React.useState<TCredentials>({
-    email: "superadmin@tcl.com",
-    password: "password2023",
+    email: "",
+    password: "",
   });
   const [loading, setLoading] = React.useState<boolean>(false);
 
