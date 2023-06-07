@@ -165,7 +165,8 @@ $SIDEBAR_WIDTH: 250px;
               transition: 0.2s ease;
             }
 
-            &:hover {
+            &:hover,
+            &.active {
               span.label {
                 color: #fcfcfc !important;
                 // color: #878787 !important;

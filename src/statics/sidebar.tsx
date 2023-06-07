@@ -22,7 +22,7 @@ export const SIDEBAR_MENU: Array<TSidebarItem> = [
     children: [
       {
         label: "Dashboard Overview",
-        url: "/dashboard",
+        url: "/dashboard/overview",
         icon: <TbHome />,
       },
       {
