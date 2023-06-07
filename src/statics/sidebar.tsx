@@ -1,10 +1,18 @@
 import {
   TbHome,
-  TbWallet,
-  TbChecklist,
-  TbHeadset,
+  TbBrowserCheck,
+  TbCheckupList,
+  TbTruckDelivery,
+  TbFileInvoice,
+  TbCalendarTime,
+  TbChartAreaLine,
+  TbChartPie4,
+  TbChartDonutFilled,
+  TbFileStack,
   TbUsers,
-  TbDatabaseExport,
+  TbClockEdit,
+  TbUserCheck,
+  TbSettings,
 } from "react-icons/tb";
 import type { TSidebarItem } from "~/types/layouts";
 
@@ -17,45 +25,111 @@ export const SIDEBAR_MENU: Array<TSidebarItem> = [
         url: "/dashboard",
         icon: <TbHome />,
       },
-    ],
-  },
-  {
-    groupName: "Manage",
-    children: [
       {
-        label: "Client Wallets",
-        url: "/manage/client-wallets",
-        icon: <TbWallet />,
-      },
-      {
-        label: "Client Transactions",
-        url: "/manage/client-transactions",
-        icon: <TbChecklist />,
+        label: "Warehouse Portal",
+        url: "/portal",
+        icon: <TbBrowserCheck />,
       },
     ],
   },
+
   {
-    groupName: "Support",
+    groupName: "Reports",
     children: [
       {
-        label: "Client Tickets",
-        url: "/support/client-tickets",
-        icon: <TbHeadset />,
+        label: "Inventory Reports",
+        url: "/dashboard",
+        icon: <TbChartAreaLine />,
+      },
+      {
+        label: "Product Reports",
+        url: "/dashboard",
+        icon: <TbChartPie4 />,
+      },
+      {
+        label: "Sales Reports",
+        url: "/dashboard",
+        icon: <TbChartDonutFilled />,
       },
     ],
   },
   {
-    groupName: "Admin",
+    groupName: "Warehouse",
     children: [
       {
-        label: "Back-office Accounts",
-        url: "/admin/manage/back-office-accounts",
+        label: "Products Inventory",
+        url: "/dashboard",
+        icon: <TbCheckupList />,
+      },
+      {
+        label: "Delivery Order Schedules",
+        url: "/dashboard",
+        icon: <TbTruckDelivery />,
+      },
+      {
+        label: "Purchase Order Schedules",
+        url: "/dashboard",
+        icon: <TbFileInvoice />,
+      },
+    ],
+  },
+  {
+    groupName: "Accountings",
+    children: [
+      {
+        label: "Account Reminders",
+        url: "/dashboard",
+        icon: <TbCalendarTime />,
+      },
+    ],
+  },
+  {
+    groupName: "Warranty Documents",
+    children: [
+      {
+        label: "Product Warranties",
+        url: "/dashboard",
+        icon: <TbFileStack />,
+      },
+      {
+        label: "Supplier Warranties",
+        url: "/dashboard",
+        icon: <TbFileStack />,
+      },
+    ],
+  },
+  {
+    groupName: "Employees",
+    children: [
+      {
+        label: "Profiles",
+        url: "/dashboard",
         icon: <TbUsers />,
       },
       {
-        label: "Data Backups",
-        url: "/admin/manage/data-backups",
-        icon: <TbDatabaseExport />,
+        label: "Time-Keeping",
+        url: "/dashboard",
+        icon: <TbClockEdit />,
+      },
+      {
+        label: "User Trails",
+        url: "/dashboard",
+        icon: <TbUsers />,
+      },
+    ],
+  },
+  {
+    groupName: "System",
+    children: [
+      {
+        label: "Users Management",
+        url: "/dashboard",
+        icon: <TbUserCheck />,
+      },
+      {
+        label: "Settings",
+        url: "/dashboard",
+        icon: <TbSettings />,
       },
     ],
   },
